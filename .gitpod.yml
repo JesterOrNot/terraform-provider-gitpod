@@ -1,0 +1,16 @@
+image:
+  file: .gitpod.Dockerfile
+  context: scripts
+vscode:
+  extensions:
+    - mauve.terraform@1.4.0:27r9VdcnEIBpa1jdjPSXdA==
+tasks:
+  - init: make
+    command: terraform init
+github:
+  prebuilds:
+    branches: true
+    pullRequestsFromForks: true
+    addComment: true
+    addBadge: true
+    addLabel: true
