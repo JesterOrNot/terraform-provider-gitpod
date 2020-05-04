@@ -1,7 +1,10 @@
-.PHONY: deps
-
+.PHONY: deps terraform
 terraform-provider-gitpod: deps
-	go build -o terraform-provider-gitpod
-
+	cd src \
+	&& go build -o ../terraform-provider-gitpod
 deps:
-	go get -d -v -t .../..
+	cd src \
+	&& go get -d -v -t .../..
+terraform: terraform-provider-gitpod
+	terraform init \
+	&& terraform apply
