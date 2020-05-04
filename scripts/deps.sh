@@ -30,8 +30,8 @@ if [ -z $(which terraform) ]; then
     sudo apt-get install unzip
     sudo wget "https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip"
     sudo unzip terraform_0.12.18_linux_amd64.zip
-    cd ..
-    sudo rm -rf terraform
+    chmod +x terraform
+    sudo install terraform /usr/bin
 fi
 if [ -z $(which git) ]; then
     sudo apt-get install -y git
